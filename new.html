@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            background: linear-gradient(to bottom, #ff00ff 0%, #00ffff 100%);
+            box-shadow: 4px 5px 6px 7px rgba(0, 0, 0, 0.756);
+            height: 40rem;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            padding-left: 20px;
+            border-radius: 20px;
+        }
+        h1{
+            text-align: center;
+            background: linear-gradient(to right, #ff00ff 0%, #00ffff 100%);
+            background-clip: text;
+            color: transparent;
+            margin-top: 1rem;
+        }
+        .input_div{
+            margin-bottom: 1rem;
+        }
+        .input_div b{
+            font-size: 20px;
+        }
+        .input{
+            width: 23rem;
+            height: 2rem;
+            font-weight: bold;
+            font-size: 16px;
+            padding-left: 20px;
+            border-radius: 20px;
+        }
+        .btn button{
+            width: 9rem;
+    height: 3rem;
+    color: white;
+    background-color: blue;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="main" style="width: 25rem;">
+            <h1>Bio data</h1>
+            <div class="input_div">
+                <b>Name</b>
+                <input type="text" name="" id="" class="input">
+            </div>
+            <div class="input_div">
+                <b>Roll</b>
+                <input type="number" class="input">
+            </div>
+            <div class="input_div">
+                <b>Gender</b>
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Female
+            </div>
+            <div class="input_div">
+                <b>Hobbies</b>
+                <input type="checkbox" name="" id="">Coding
+                <input type="checkbox" name="" id="">Drawing
+                <input type="checkbox" name="" id="">Reading
+            </div>
+            <div class="input_div">
+                <b>Course</b>
+                <select name="" id="">
+                    <option value="">BCA</option>
+                    <option value="">MCA</option>
+                    <option value="">BBCA</option>
+                    <option value="">BACA</option>
+                </select>
+            </div>
+            <div class="input_div">
+                <b>Address</b>
+                <input type="text" name="" id="" class="input">
+            </div>
+            <div class="input_div">
+                <b>Pincode</b>
+                <input type="text" name="" id="" class="input">
+            </div>
+            <div class="input_div mobile_input">
+                <b>Mobile Number</b>
+                <input type="text" name="" id="" class="input">
+            </div>
+            <div class="btn">
+                <button>Submit</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        let btn = document.querySelector("form button");
+        let M_number = document.querySelector(".mobile_input input");
+        function ValidPhoneNumber(input_str) {
+            var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+            return re.test(input_str);
+        }
+        
+        btn.addEventListener("Click",(e)=>{
+            e.preventDefault();
+            M_number.value = "Valid";
+            console.log("hello");
+            // let b = ValidPhoneNumber(M_number.value);
+            // e.preventDefault;
+            // if(b){
+            //     M_number.style.color = "green";
+            //     M_number.value = "Valid";
+            // }else{
+            //     M_number.style.color = "red";
+            //     M_number.value = "Invalid";
+            // }
+            return false;
+        })
+    </script>
+</body>
+</html>
